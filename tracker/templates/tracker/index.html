@@ -1,0 +1,9 @@
+{% if series_list %}
+<ul>
+    {% for serie in series_list %}
+    <li><a href="/tracker/{{ serie.id }}/">{{ serie.title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Polls are available. </p>
+{% endif %}

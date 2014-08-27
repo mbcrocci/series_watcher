@@ -1,0 +1,9 @@
+<h1>{{ serie.title }}</h1>
+
+<p>{{ serie.story_line }}</p>
+
+<ul>
+    {% for episode in season_set.episode_set.all %}
+    <li>{{ episode.title }}</li>
+    {% endfor %}
+</ul>
