@@ -3,7 +3,16 @@
 <p>{{ serie.story_line }}</p>
 
 <ul>
-    {% for episode in season_set.episode_set.all %}
-    <li>{{ episode.title }}</li>
+{% for season in serie.season_set.all %}
+	<h3> season {{ season.id }} </h3>
+
+    {% for episode in season.episode_set.all %}
+
+        <li><a href="/tracker/{{ serie.id }}/{{ season.id }}/{{ episode.id }}">
+        {{ episode.title }}</a></li>
+
     {% endfor %}
+
+{% endfor %}
 </ul>
+

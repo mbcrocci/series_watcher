@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from tracker.models import Serie
+from tracker.models import Serie, Episode
 
 
 def index(request):
@@ -15,4 +15,4 @@ def details(request, serie_id):
 
 def episode(request, episode_id):
     episode = get_object_or_404(Episode, pk=episode_id)
-    return render(requet, 'tracker/episode.html', {'episode': episode})
+    return render(request, 'tracker/episode.html', {'episode': episode})
